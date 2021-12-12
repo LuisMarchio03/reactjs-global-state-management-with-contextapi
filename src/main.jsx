@@ -3,6 +3,7 @@ import { StylesProvider } from "@material-ui/core/styles";
 import { BrowserRouter } from "react-router-dom";
 import { UsuarioProvider } from "./common/contexts/Usuario";
 import { CarrinhoProvider } from "./common/contexts/Carrinho";
+import { PagamentoProvider } from "./common/contexts/Pagamento";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -25,9 +26,11 @@ ReactDOM.render(
       <ThemeProvider theme={theme}>
         <UsuarioProvider>
           <CarrinhoProvider>
-            <BrowserRouter>
-              <Routes />
-            </BrowserRouter>
+            <PagamentoProvider>
+              <BrowserRouter>
+                <Routes />
+              </BrowserRouter>
+            </PagamentoProvider>
           </CarrinhoProvider>
         </UsuarioProvider>
       </ThemeProvider>
